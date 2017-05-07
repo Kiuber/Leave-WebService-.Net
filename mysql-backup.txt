@@ -1,0 +1,83 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : 123.206.23.28
+Source Server Version : 50527
+Source Host           : 123.206.23.28:3306
+Source Database       : leave
+
+Target Server Type    : MYSQL
+Target Server Version : 50527
+File Encoding         : 65001
+
+Date: 2017-02-17 10:37:09
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for account
+-- ----------------------------
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
+  `id` varchar(255) NOT NULL,
+  `pwd` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of account
+-- ----------------------------
+INSERT INTO `account` VALUES ('1', '1', '0ef0b959-0b2b-4e26-bba3-37d15969d30f');
+INSERT INTO `account` VALUES ('1513640211', '5', 'e8ac2a18-07e1-45d8-9dde-ff25730934f6');
+INSERT INTO `account` VALUES ('1513640218', '1', 'e669d2d7-98b4-48ae-828e-9a89e0dfaee9');
+
+-- ----------------------------
+-- Table structure for record
+-- ----------------------------
+DROP TABLE IF EXISTS `record`;
+CREATE TABLE `record` (
+  `end` varchar(255) DEFAULT NULL,
+  `start` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `id` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `created` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `updated` varchar(255) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of record
+-- ----------------------------
+INSERT INTO `record` VALUES ('2017-02-15 14:32', '2017-02-15 13:24', '你好', '0', '1', '2', '2017/2/11 14:33:23', '2017/2/11 14:33:23');
+INSERT INTO `record` VALUES ('2017-02-11 14:32', '2017-02-11 14:32', '11', '1', '11', '2', '2017/2/15 星期三 12:49:31', '2017/2/15 星期三 12:49:31');
+INSERT INTO `record` VALUES ('2017-02-17 13:24', '2017-02-15 13:24', '？？', '0', '1', '2', '2017/2/15 13:25:24', '2017/2/15 13:25:24');
+INSERT INTO `record` VALUES ('2017-02-17 13:24', '2017-02-1 13:24', '？？', '0', '1', '2', '2017/2/15 13:25:27', '2017/2/15 13:25:27');
+INSERT INTO `record` VALUES ('2017/2/19 13:25:51', '2017-02-02 14:32', '2017/2/19 13:25:51', '2017/2/19 13:25:51', '1', '2', '2017/2/15 星期三 14:02:47', '2017/2/15 星期三 14:02:47');
+INSERT INTO `record` VALUES ('2017/2/19 13:25:51', '2017/2/19 13:25:51', '2017/2/19 13:25:51', '2017/2/19 13:25:51', '1', '2', '2017/2/15 星期三 14:04:01', '2017/2/15 星期三 14:04:01');
+INSERT INTO `record` VALUES ('2017-02-15 13:24', '2017-02-15 13:24', '1', '1', '1513640211', '2', '2017/2/16 星期四 10:44:11', '2017/2/16 星期四 10:44:11');
+
+-- ----------------------------
+-- Table structure for student
+-- ----------------------------
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+  `id` varchar(255) NOT NULL,
+  `nickname` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `sex` int(1) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `class` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `autograph` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of student
+-- ----------------------------
+INSERT INTO `student` VALUES ('1', '测试用户', '测试', '1', '', '软件开发方向一班', '革命尚未成功，同志仍需努力');
+INSERT INTO `student` VALUES ('1513640211', '冉', '李冉', '1', null, '软件开发方向三班', '这家伙很懒，什么东西东西都没留下');
+INSERT INTO `student` VALUES ('1513640215', 'Kiuber', '姚明', '1', '', '软件开发方向一班', '这家伙很懒，什么东西东西都没留下');
+INSERT INTO `student` VALUES ('1513640218', 'Kiuber', '张庆宝', '1', 'http://www.kiuber.me/blog/images/avatar.png', '软件开发方向一班', '这家伙很懒，什么东西东西都没留下');
